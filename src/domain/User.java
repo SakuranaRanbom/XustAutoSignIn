@@ -1,10 +1,10 @@
 package domain;
 
 public class User {
-    private String uid;
-    private String gh;
-    private String name;
-    private String phone = "17602937887";
+    private String uid = "MDgxNEUxNUJEMEI0QUY0NTE2MkExNDQ3RTQ2NTlEN0I=";
+    private String gh = "17408070128";
+    private String name = "example";
+    private String phone = "13963410028";
     private String in = "1";
 
     public User() {

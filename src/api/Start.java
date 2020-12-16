@@ -18,6 +18,7 @@ public class Start extends HttpServlet {
         JdbcTemplate template = new JdbcTemplate(JDBCUtils.getDatasource());
         template.update("insert into logs values(?, ?, ?)", "10000", "签到开始执行", new Date());
         readSql.read();
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

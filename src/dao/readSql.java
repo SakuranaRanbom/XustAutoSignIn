@@ -4,8 +4,8 @@ import JdbcUtils.JDBCUtils;
 import domain.User;
 import main.SignIn;
 import org.springframework.jdbc.core.JdbcTemplate;
-import sms.SendFailedSms;
-import sms.SendSuccessSms;
+//import sms.SendFailedSms;
+//import sms.SendSuccessSms;
 
 import javax.jws.soap.SOAPBinding;
 import java.io.BufferedWriter;
@@ -72,7 +72,7 @@ public class readSql {
                             ex.printStackTrace();
                         }
                         // 可能由于某些原因失败 则通知用户
-                        SendFailedSms.sendSms(name, phone);
+//                        SendFailedSms.sendSms(name, phone);
                     }
                 }
             }).start();
