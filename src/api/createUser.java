@@ -3,6 +3,7 @@ package api;
 import dao.Create;
 import dao.QianDao;
 import domain.User;
+import mail.SendMail;
 //import sms.SendSuccessSms;
 
 import javax.servlet.ServletException;
@@ -26,9 +27,7 @@ public class createUser extends HttpServlet {
             String uid = request.getParameter("uid");
             String gh = request.getParameter("gh");
             String in = request.getParameter("in");
-            System.out.println("uid = " + uid);
-            System.out.println("gh = " + gh);
-            System.out.println("in = " + in);
+            String email = request.getParameter("email");
             if( (uid == null || uid.length() == 0) || (!uid.contains("http://ehallplatform.xust.edu.cn")) && (!uid.contains("https://ehallplatform.xust.edu.cn"))){
                 response.sendRedirect("/failed.html");
             } else if ((gh == null || gh.length() < 10) || (gh.length() == 10 && Integer.parseInt(gh.substring(0, 2)) >= 16) || gh.length() > 11){
@@ -37,8 +36,9 @@ public class createUser extends HttpServlet {
                 response.sendRedirect("/failedIn.html");
             } else {
                 Map<String, String> map = getUserMsg.getUsername(uid, gh);
-                User user = new User(uid, gh, map.get("name"), map.get("phone"), in);
+                User user = new User(uid, gh, map.get("name"), map.get("phone"), in, email);
                 Create.create(user); // 创建用户
+                SendMail.send(email, map.get("name"), 0);
 //                SendSuccessSms.sendSms(user.getName(), user.getPhone());
                 SimpleDateFormat sdf = new SimpleDateFormat("HH");
                 String hour = sdf.format(new Date());

@@ -37,18 +37,18 @@ public class SignInNight {
         System.out.println(val.substring(11, 13));
     }
 
-    public static void text() throws IOException {
-        for(long i = 16407020401L; i <= 16407020433L; i++){
-            StringBuilder sb = new StringBuilder();
-            long val= i;
-            while(val != 0){
-                sb.append(((int) (val % 10)));
-                val /= 10;
-            }
-            String gh = sb.reverse().toString();
-            System.out.println("i = " + sb.toString() + "  check = " + check(new User("demo", gh, "name", "17602937887", "1"), getCookie("http://ehallplatform.xust.edu.cn/default/jkdk/mobile/mobJkdkAdd_test.jsp?uid=M0YyNkIxQzNGNkExQkVCRThGRkNFQTEzMzI2RjY4Q0U=")));
-        }
-    }
+//    public static void text() throws IOException {
+//        for(long i = 16407020401L; i <= 16407020433L; i++){
+//            StringBuilder sb = new StringBuilder();
+//            long val= i;
+//            while(val != 0){
+//                sb.append(((int) (val % 10)));
+//                val /= 10;
+//            }
+//            String gh = sb.reverse().toString();
+//            System.out.println("i = " + sb.toString() + "  check = " + check(new User("demo", gh, "name", "17602937887", "1"), getCookie("http://ehallplatform.xust.edu.cn/default/jkdk/mobile/mobJkdkAdd_test.jsp?uid=M0YyNkIxQzNGNkExQkVCRThGRkNFQTEzMzI2RjY4Q0U=")));
+//        }
+//    }
 
     public static String getLastTime(User user, String cookie) throws IOException {
         CloseableHttpClient build = HttpClientBuilder.create().build();

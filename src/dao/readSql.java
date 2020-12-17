@@ -2,6 +2,7 @@ package dao;
 
 import JdbcUtils.JDBCUtils;
 import domain.User;
+import mail.SendMail;
 import main.SignIn;
 import org.springframework.jdbc.core.JdbcTemplate;
 //import sms.SendFailedSms;
@@ -44,7 +45,8 @@ public class readSql {
             String name = (String) map.get("name");
             String phone = (String) map.get("phone");
             String in = (String) map.get("in");
-            final User user = new User(uid, gh, name, phone, in);
+            String email = (String) map.get("email");
+            final User user = new User(uid, gh, name, phone, in, email);
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -73,6 +75,7 @@ public class readSql {
                         }
                         // 可能由于某些原因失败 则通知用户
 //                        SendFailedSms.sendSms(name, phone);
+                        SendMail.send(email, user.getName(), 1);
                     }
                 }
             }).start();

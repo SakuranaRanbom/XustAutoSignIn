@@ -27,14 +27,14 @@ import java.util.*;
 public class SignInAfternoon {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        User user = new User(
-                "http://ehallplatform.xust.edu.cn/default/jkdk/mobile/mobJkdkAdd_test.jsp?uid=NUMzQTBEM0Y0QTlCQzEzMTFCMzA3OThBQzEyRDZDMzg=",
-                "16407020326",
-                "陈航",
-                "17602937887",
-                "1"
-        );
-        start(user);
+//        User user = new User(
+//                "http://ehallplatform.xust.edu.cn/default/jkdk/mobile/mobJkdkAdd_test.jsp?uid=NUMzQTBEM0Y0QTlCQzEzMTFCMzA3OThBQzEyRDZDMzg=",
+//                "16407020326",
+//                "陈航",
+//                "17602937887",
+//                "1"
+//        );
+//        start(user);
     }
 
     public static void text() throws IOException {
@@ -47,7 +47,7 @@ public class SignInAfternoon {
             }
             String cookie = getCookie("http://ehallplatform.xust.edu.cn/default/jkdk/mobile/mobJkdkAdd.jsp?uid=MjYzNUJBQjA2RTU5OUI1RTFGMDQxMzVGNzk3RjlGNzc=");
             String gh = sb.reverse().toString();
-            System.out.println("i = " + sb.toString() + "  check = " + check(new User("demo", gh, "name", "17602937887", "1"), cookie));
+//            System.out.println("i = " + sb.toString() + "  check = " + check(new User("demo", gh, "name", "17602937887", "1"), cookie));
         }
     }
 

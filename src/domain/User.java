@@ -1,21 +1,23 @@
 package domain;
 
 public class User {
-    private String uid = "MDgxNEUxNUJEMEI0QUY0NTE2MkExNDQ3RTQ2NTlEN0I=";
-    private String gh = "17408070128";
-    private String name = "example";
-    private String phone = "13963410028";
+    private String uid;
+    private String gh;
+    private String name;
+    private String phone;
     private String in = "1";
-
+    private String email;
     public User() {
+
     }
 
-    public User(String uid, String gh, String name, String phone, String in) {
+    public User(String uid, String gh, String name, String phone, String in, String email) {
         this.uid = uid;
         this.gh = gh;
         this.name = name;
         this.phone = phone;
         this.in = in;
+        this.email = email;
     }
 
     public String getUid() {
@@ -58,6 +60,14 @@ public class User {
         this.in = in;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -66,6 +76,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", in='" + in + '\'' +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
