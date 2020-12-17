@@ -1,5 +1,6 @@
 package api;
 
+import api.util.ResultUtil;
 import dao.Create;
 import dao.QianDao;
 import domain.User;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
@@ -29,7 +31,17 @@ public class createUser extends HttpServlet {
             String in = request.getParameter("in");
             String email = request.getParameter("email");
             if( (uid == null || uid.length() == 0) || (!uid.contains("http://ehallplatform.xust.edu.cn")) && (!uid.contains("https://ehallplatform.xust.edu.cn"))){
-                response.sendRedirect("/failed.html");
+//                response.setStatus();
+//                response.sendRedirect("/failed.html");
+                response.setStatus(200);
+                ResultUtil resultUtil = new ResultUtil();
+                resultUtil.setCode(1001);
+                resultUtil.setSuccess(false);
+                resultUtil.setMessage("failed.html");
+                PrintWriter writer = response.getWriter();
+                writer.print(resultUtil);
+
+
             } else if ((gh == null || gh.length() < 10) || (gh.length() == 10 && Integer.parseInt(gh.substring(0, 2)) >= 16) || gh.length() > 11){
                 response.sendRedirect("/failedGh.html");
             } else if(in == null || in.length() == 0){
