@@ -1,6 +1,8 @@
 package api;
 
+import api.util.RequestBodyDTO;
 import api.util.ResultUtil;
+import com.alibaba.fastjson.JSONObject;
 import dao.Create;
 import dao.QianDao;
 import domain.User;
@@ -21,15 +23,21 @@ import java.util.Map;
 @WebServlet("/createUser")
 public class createUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String s = request.getReader().readLine();
         if(request.getParameter("delete") != null){
             request.getRequestDispatcher("/DeleteUser").forward(request, response);
         } else {
             request.setCharacterEncoding("utf-8");
             response.setContentType("application/json; charset=utf-8");
-            String uid = request.getParameter("uid");
-            String gh = request.getParameter("gh");
-            String in = request.getParameter("in");
-            String email = request.getParameter("email");
+
+            RequestBodyDTO requestBodyDTO = JSONObject.toJavaObject(JSONObject.parseObject(s), RequestBodyDTO.class);
+
+            String uid = requestBodyDTO.getUid();
+            String gh = requestBodyDTO.getGh();
+            String in = requestBodyDTO.getIn();
+            String email = requestBodyDTO.getEmail();
+
+
             if( (uid == null || uid.length() == 0) || (!uid.contains("http://ehallplatform.xust.edu.cn")) && (!uid.contains("https://ehallplatform.xust.edu.cn"))){
 //                response.sendRedirect("/failed.html");
                 response.setStatus(200);

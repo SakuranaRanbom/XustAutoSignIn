@@ -2,6 +2,7 @@ package api;
 
 import JdbcUtils.JDBCUtils;
 import api.util.ResultUtil;
+import com.alibaba.fastjson.JSONObject;
 import dao.Create;
 import dao.QianDao;
 import domain.User;
@@ -25,7 +26,9 @@ public class Delete extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("application/json; charset=utf-8");
-        String gh = request.getParameter("gh");
+        String s = request.getReader().readLine();
+        Map map = (Map) JSONObject.parse(s);
+        String gh = (String) map.get("gh");
 
         if ((gh == null || gh.length() == 0) || (gh.length() == 10 && Integer.parseInt(gh.substring(0, 2)) >= 16)){
             response.setStatus(200);

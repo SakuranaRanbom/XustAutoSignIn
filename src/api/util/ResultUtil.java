@@ -2,6 +2,9 @@ package api.util;
 
 import com.alibaba.fastjson.JSONObject;
 
+/**
+ * @author bhj
+ */
 public class ResultUtil {
 
     private Integer code;
