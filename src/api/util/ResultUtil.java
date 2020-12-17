@@ -1,5 +1,7 @@
 package api.util;
 
+import com.alibaba.fastjson.JSONObject;
+
 public class ResultUtil {
 
     private Integer code;
@@ -30,5 +32,10 @@ public class ResultUtil {
 
     public void setSuccess(boolean success) {
         isSuccess = success;
+    }
+
+    @Override
+    public String toString() {
+        return JSONObject.toJSONString(this);
     }
 }
