@@ -31,7 +31,6 @@ public class createUser extends HttpServlet {
             String in = request.getParameter("in");
             String email = request.getParameter("email");
             if( (uid == null || uid.length() == 0) || (!uid.contains("http://ehallplatform.xust.edu.cn")) && (!uid.contains("https://ehallplatform.xust.edu.cn"))){
-//                response.setStatus();
 //                response.sendRedirect("/failed.html");
                 response.setStatus(200);
                 ResultUtil resultUtil = new ResultUtil();
@@ -39,13 +38,26 @@ public class createUser extends HttpServlet {
                 resultUtil.setSuccess(false);
                 resultUtil.setMessage("failed.html");
                 PrintWriter writer = response.getWriter();
-                writer.print(resultUtil);
+                writer.print(resultUtil.toString());
 
 
             } else if ((gh == null || gh.length() < 10) || (gh.length() == 10 && Integer.parseInt(gh.substring(0, 2)) >= 16) || gh.length() > 11){
-                response.sendRedirect("/failedGh.html");
+//                response.sendRedirect("/failedGh.html");
+                response.setStatus(200);
+                ResultUtil resultUtil = new ResultUtil();
+                resultUtil.setCode(1001);
+                resultUtil.setSuccess(false);
+                resultUtil.setMessage("failedGh.html");
+                PrintWriter writer = response.getWriter();
+                writer.print(resultUtil.toString());
             } else if(in == null || in.length() == 0){
-                response.sendRedirect("/failedIn.html");
+                response.setStatus(200);
+                ResultUtil resultUtil = new ResultUtil();
+                resultUtil.setCode(1001);
+                resultUtil.setSuccess(false);
+                resultUtil.setMessage("failedIn.html");
+                PrintWriter writer = response.getWriter();
+                writer.print(resultUtil.toString());
             } else {
                 Map<String, String> map = getUserMsg.getUsername(uid, gh);
                 User user = new User(uid, gh, map.get("name"), map.get("phone"), in, email);
@@ -67,7 +79,14 @@ public class createUser extends HttpServlet {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                response.sendRedirect("/success.html");
+                response.setStatus(200);
+                ResultUtil resultUtil = new ResultUtil();
+                resultUtil.setCode(1000);
+                resultUtil.setSuccess(true);
+                resultUtil.setMessage("success.html");
+                PrintWriter writer = response.getWriter();
+                writer.print(resultUtil.toString());
+//                response.sendRedirect("/success.html");
             }
         }
     }
