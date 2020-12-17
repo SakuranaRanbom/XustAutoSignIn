@@ -4,6 +4,7 @@ import JdbcUtils.JDBCUtils;
 import dao.Create;
 import dao.QianDao;
 import domain.User;
+import mail.SendMail;
 import org.springframework.jdbc.core.JdbcTemplate;
 //import sms.SendSuccessSms;
 
@@ -23,6 +24,7 @@ public class Delete extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("application/json; charset=utf-8");
         String gh = request.getParameter("gh");
+
         if ((gh == null || gh.length() == 0) || (gh.length() == 10 && Integer.parseInt(gh.substring(0, 2)) >= 16)){
             response.sendRedirect("/failedGh.html");
         } else {
@@ -30,7 +32,7 @@ public class Delete extends HttpServlet {
             int count = template.update("delete from user where gh = ?", gh);
             if(count >= 1){
                 template.update("insert into logs values(?, ?, ?)", "学号:" + gh, "删除成功", new Date());
-               response.sendRedirect("/deleteSuccess.html");
+                response.sendRedirect("/deleteSuccess.html");
             } else {
                 template.update("insert into logs values(?, ?, ?)", "学号:" + gh, "删除失败", new Date());
                 response.sendRedirect("/deleteFailed.html");

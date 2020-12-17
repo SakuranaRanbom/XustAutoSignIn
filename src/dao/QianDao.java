@@ -2,6 +2,7 @@ package dao;
 
 import JdbcUtils.JDBCUtils;
 import domain.User;
+import mail.SendMail;
 import main.SignIn;
 import main.SignInAfternoon;
 import main.SignInNight;
@@ -35,6 +36,7 @@ public class QianDao {
         if(t == 0){ // 此用户自动签到失败了 打出到日志 并发送短信提醒
             template.update("insert into logs values(?, ?, ?)", "学号:" + user.getGh() + " 姓名:" + user.getName(), "failed", new Date());
 //            SendFailedSms.sendSms(user.getName(), user.getPhone());
+            SendMail.send(user.getEmail(), user.getName(), 1);
         } else {
             template.update("insert into logs values(?, ?, ?)", "学号:" + user.getGh() + " 姓名:" + user.getName(), "success", new Date());
         }

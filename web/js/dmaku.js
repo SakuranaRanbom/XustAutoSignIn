@@ -31,7 +31,7 @@ document.querySelector('#gh').addEventListener('focus', function(e) {
         }
     });
 });
-document.querySelector('#submi').addEventListener('focus', function(e) {
+document.querySelector('#submit').addEventListener('focus', function(e) {
     if (current) current.pause();
     current = anime({
         targets: 'path',
