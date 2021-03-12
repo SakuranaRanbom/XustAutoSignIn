@@ -1,0 +1,5 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="_content/AntDesign" Path="C:\Users\lenovo\.nuget\packages\antdesign\0.7.1\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/" Path="F:\.net_core\DakaWeb\DakaWeb\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="F:\.net_core\DakaWeb\DakaWeb\obj\Debug\net5.0\scopedcss\bundle\" />
+</StaticWebAssets>
