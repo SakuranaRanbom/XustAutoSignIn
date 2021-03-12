@@ -5,7 +5,19 @@
 
 ~~测试网站:https://xust.hangcc.cn/~~
 
-测试网站：http://39.99.143.132:8080
+~~测试网站：http://39.99.143.132:8080~~
+
+测试网站: http://wck136242004.xicp.net     【blazor wasm部署到服务器后访问的加载缓慢远超我的想象。准备用blazor server重构,没做信息反馈，注意查收邮箱】
+
+---
+
+Update on 2021-03-12-LeoRanbom
+
+0. 开学快乐
+1. 解决go版本跨域问题
+2. 用.net的blazor wasm构建了个简易前端。
+
+
 
 ---
 
