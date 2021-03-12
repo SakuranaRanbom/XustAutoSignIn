@@ -27,6 +27,7 @@ func Run() {
 		gin.SetMode(gin.ReleaseMode)
 		variable.Engine = gin.Default()
 		// middleware
+		variable.Engine.Use(Cors2())
 		// api and cron
 		baseApiRouter()
 		if cfg.XustAutoSignIn {
