@@ -1,0 +1,118 @@
+﻿@using System.ComponentModel.DataAnnotations;
+@using System.ComponentModel.Design.Serialization
+@using System.Text.Json;
+@using System.Threading
+@inject HttpClient http;
+@using System.Net.Http;
+@using System.Net.Http.Json
+@page "/daka"
+<Form Model="@model"
+      OnFinish="OnFinish"
+      OnFinishFailed="OnFinishFailed">
+    <FormItem Label="Url">
+        <Input @bind-Value="@context.Url" />
+    </FormItem>
+    <FormItem Label="学号">
+        <Input @bind-Value="@context.Sno" />
+    </FormItem>
+    <FormItem Label="邮箱">
+        <Input @bind-Value="@context.Email" />
+    </FormItem>
+    <Row>
+        <Col Offset="8" />
+        <FormItem Label="验证码">
+            <Input @bind-Value="@context.Code"/>
+        </FormItem>
+        <Button type="@ButtonType.Dashed" @onclick="sendCode">
+            发送验证码
+        </Button>
+
+    </Row>
+    
+    <FormItem>
+        <Checkbox @bind-Value="context.RememberMe">记住我</Checkbox>
+    </FormItem>
+    <FormItem>
+        <Button Type="@ButtonType.Primary" HtmlType="submit" @onclick="addUser">
+            上传打卡任务
+        </Button>
+    </FormItem>
+</Form>
+<Row>
+    <Button type="@ButtonType.Primary" @onclick="sendPing">Ping服务端</Button>
+    <text>状态:@model.PingStatus</text>
+</Row>
+@code
+{
+    public class Model
+    {
+        [Required]
+        public string Url { get; set; }
+        [Required]
+        public string Sno { get; set; }
+        [Required]
+        public string Email { get; set; }
+        [Required]
+        public string Code { get; set; }
+        public bool RememberMe { get; set; } = true;
+        public string PingStatus { get; set; }
+    }
+
+    public class LoginModel
+    {
+        
+        public string url { get; set; }
+        
+        public string sno { get; set; }
+        
+        public string email { get; set; }
+        public int time { get; set; }
+        
+        public string verifyCode { get; set; }
+    }
+    public class Msg
+    {
+        public int code;
+        public string message;
+        public bool isSuccess;
+    }
+
+    private Msg msg = new Msg();
+    private Model model = new Model();
+    private LoginModel _loginModel = new LoginModel();
+
+    private void OnFinish(EditContext editContext)
+    {
+        Console.WriteLine($"Success:{JsonSerializer.Serialize(model)}");
+    }
+
+    private void OnFinishFailed(EditContext editContext)
+    {
+        Console.WriteLine($"Failed:{JsonSerializer.Serialize(model)}");
+    }
+
+    private async Task sendCode()
+    {
+        string str = "api/verifyCode?sno=" + model.Sno + "&email=" + model.Email;
+        Console.WriteLine(str);
+        msg =await http.GetFromJsonAsync<Msg>(str);
+    }
+
+    private async Task sendPing()
+    {
+        model.PingStatus = await http.GetStringAsync("api/ping");
+    }
+
+    private async Task addUser()
+    {
+        _loginModel.time = 2;
+        _loginModel.url = model.Url;
+        _loginModel.email = model.Email;
+        _loginModel.sno = model.Sno;
+        _loginModel.verifyCode = model.Code;
+        Console.WriteLine(JsonSerializer.Serialize(_loginModel));
+        var content = await http.PutAsJsonAsync("api/xust/user", _loginModel);
+        msg =await content.Content.ReadFromJsonAsync<Msg>();
+    }
+        
+}

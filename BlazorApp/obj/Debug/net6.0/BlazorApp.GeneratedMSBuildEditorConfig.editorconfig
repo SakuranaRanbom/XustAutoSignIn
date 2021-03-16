@@ -1,0 +1,81 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = BlazorApp
+build_property.RootNamespace = BlazorApp
+build_property.ProjectDir = F:\.net_core\BlazorApp\
+build_property.RazorLangVersion = 5.0
+build_property.MSBuildProjectDirectory = F:\.net_core\BlazorApp
+build_property.DesignTimeBuild = 
+build_property._RazorReferenceAssemblyTagHelpersOutputPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\RazorTagHelper.refs.out.cache
+build_property._RazorSourceGeneratorDebug = 
+build_property._RazorSourceGeneratorLog = 
+
+[F:/.net_core/BlazorApp/App.razor]
+build_metadata.AdditionalFiles.TargetPath = App.razor
+build_metadata.AdditionalFiles.GeneratedOutputFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\Razor\App.razor.g.cs
+build_metadata.AdditionalFiles.GeneratedDeclarationFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\RazorDeclaration\App.razor.g.cs
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.net_core/BlazorApp/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Pages\Counter.razor
+build_metadata.AdditionalFiles.GeneratedOutputFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\Razor\Pages\Counter.razor.g.cs
+build_metadata.AdditionalFiles.GeneratedDeclarationFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\RazorDeclaration\Pages\Counter.razor.g.cs
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.net_core/BlazorApp/Pages/Daka.razor]
+build_metadata.AdditionalFiles.TargetPath = Pages\Daka.razor
+build_metadata.AdditionalFiles.GeneratedOutputFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\Razor\Pages\Daka.razor.g.cs
+build_metadata.AdditionalFiles.GeneratedDeclarationFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\RazorDeclaration\Pages\Daka.razor.g.cs
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.net_core/BlazorApp/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = Pages\FetchData.razor
+build_metadata.AdditionalFiles.GeneratedOutputFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\Razor\Pages\FetchData.razor.g.cs
+build_metadata.AdditionalFiles.GeneratedDeclarationFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\RazorDeclaration\Pages\FetchData.razor.g.cs
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.net_core/BlazorApp/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = Pages\Index.razor
+build_metadata.AdditionalFiles.GeneratedOutputFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\Razor\Pages\Index.razor.g.cs
+build_metadata.AdditionalFiles.GeneratedDeclarationFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\RazorDeclaration\Pages\Index.razor.g.cs
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.net_core/BlazorApp/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = Shared\SurveyPrompt.razor
+build_metadata.AdditionalFiles.GeneratedOutputFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\Razor\Shared\SurveyPrompt.razor.g.cs
+build_metadata.AdditionalFiles.GeneratedDeclarationFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.net_core/BlazorApp/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = _Imports.razor
+build_metadata.AdditionalFiles.GeneratedOutputFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\Razor\_Imports.razor.g.cs
+build_metadata.AdditionalFiles.GeneratedDeclarationFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\RazorDeclaration\_Imports.razor.g.cs
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.net_core/BlazorApp/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Shared\MainLayout.razor
+build_metadata.AdditionalFiles.GeneratedOutputFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\Razor\Shared\MainLayout.razor.g.cs
+build_metadata.AdditionalFiles.GeneratedDeclarationFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
+build_metadata.AdditionalFiles.CssScope = b-3dsd3z3yec
+
+[F:/.net_core/BlazorApp/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Shared\NavMenu.razor
+build_metadata.AdditionalFiles.GeneratedOutputFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\Razor\Shared\NavMenu.razor.g.cs
+build_metadata.AdditionalFiles.GeneratedDeclarationFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\RazorDeclaration\Shared\NavMenu.razor.g.cs
+build_metadata.AdditionalFiles.CssScope = b-7cxxmz0cwl
+
+[F:/.net_core/BlazorApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Pages\Error.cshtml
+build_metadata.AdditionalFiles.GeneratedOutputFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\Razor\Pages\Error.cshtml.g.cs
+build_metadata.AdditionalFiles.GeneratedDeclarationFullPath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/.net_core/BlazorApp/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Pages\_Host.cshtml
+build_metadata.AdditionalFiles.GeneratedOutputFullPath = F:\.net_core\BlazorApp\obj\Debug\net6.0\Razor\Pages\_Host.cshtml.g.cs
+build_metadata.AdditionalFiles.GeneratedDeclarationFullPath = 
+build_metadata.AdditionalFiles.CssScope =
