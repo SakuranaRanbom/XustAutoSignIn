@@ -9,6 +9,15 @@
 
 测试网站: http://wck136242004.xicp.net     【blazor wasm部署到服务器后访问的加载缓慢远超我的想象。准备用blazor server重构,没做信息反馈，注意查收邮箱】
 
+
+
+---
+
+Update on 2021-03-17
+
+0. 重构解决打开太慢的问题
+1. blazor server，一键启动部署前端页面，http端口5000，https端口5001。（一分钟打开页面--->5s打开页面）
+
 ---
 
 Update on 2021-03-12-LeoRanbom
