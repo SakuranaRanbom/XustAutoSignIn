@@ -8,7 +8,7 @@
 ~~测试网站：http://39.99.143.132:8080~~
 
 测试网站: http://wck136242004.xicp.net     【blazor wasm部署到服务器后访问的加载缓慢远超我的想象。准备用blazor server重构,没做信息反馈，注意查收邮箱】
-
+内网穿透1m -> 10m： http://pi.bdsplugins.cn
 
 
 ---
